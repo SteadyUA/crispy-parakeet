@@ -1,0 +1,4 @@
+# just for plugin
+imports:
+  - { resource: communication/services.yml }
+  - { resource: user/services.yml }

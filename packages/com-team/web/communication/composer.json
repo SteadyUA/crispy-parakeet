@@ -1,0 +1,18 @@
+{
+    "type": "library",
+    "name": "web/communication",
+    "description": "communication controllers component",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Web\\Communication\\": "src/"
+        }
+    },
+    "require": {
+        "web/app": "^1",
+
+        "communication/messages": "^1",
+        "communication/messages-storage": "^1",
+        "communication/member-list": "^1"
+    }
+}

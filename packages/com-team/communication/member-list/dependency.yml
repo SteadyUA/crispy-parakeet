@@ -1,0 +1,23 @@
+services:
+  _defaults:
+    public: false
+    autowire: true
+
+  Communication\MemberList\:
+    resource: './src/*'
+
+  Communication\MemberList\MemberAware:
+    alias: Communication\MemberList\Service\Member
+    public: true
+
+  Communication\MemberList\MembersProjection:
+    alias: Communication\MemberList\Service\Member
+    public: true
+
+# private
+  Communication\MemberList\Infrastructure\InFileStorage:
+    - '@MemberStorageDao'
+
+  MemberStorageDao:
+    class: Phoenix\Util\InFileStorage\SingleFileDao
+    arguments: ['%var_dir%/members.db']

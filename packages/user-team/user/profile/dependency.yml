@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    public: false
+    autowire: true
+
+  User\Profile\:
+    resource: './src/*'
+
+  User\Profile\ProfileService:
+    alias: User\Profile\Service\Profile
+    public: true
+
+# private
+  User\Profile\Infrastructure\InFileStorage:
+    - '@ProfileStorageDao'
+
+  ProfileStorageDao:
+    class: Phoenix\Util\InFileStorage\SingleFileDao
+    arguments: ['%var_dir%/profiles.db']

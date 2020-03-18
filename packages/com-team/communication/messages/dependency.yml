@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    public: false
+    autowire: true
+
+  Communication\Messages\:
+    resource: './src/*'
+
+  Communication\Messages\SendMessageAware:
+    alias: Communication\Messages\Service\Messages
+    public: true
+
+  Communication\Messages\MessagesProjection:
+    alias: Communication\Messages\Service\Messages
+    public: true

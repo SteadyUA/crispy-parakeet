@@ -1,0 +1,15 @@
+imports:
+  - { resource: ../../user/auth/dependency.yml }
+  - { resource: ../../user/profile/dependency.yml }
+
+services:
+  _defaults:
+    autowire: true
+
+  _instanceof:
+    Web\Controller:
+      tags: [Web\Controller]
+      public: true
+
+  Web\User\:
+    resource: './src/*'

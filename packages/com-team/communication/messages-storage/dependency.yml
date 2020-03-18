@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    public: false
+    autowire: true
+
+  Communication\MessagesStorage\:
+    resource: './src/*'
+
+  Communication\Messages\Service\MessagesStorage:
+    class: Communication\MessagesStorage\InFileMessagesStorage
+    public: true
+    arguments:
+    - '@ChatStorageDao'
+
+  ChatStorageDao:
+    class: Phoenix\Util\InFileStorage\SingleFileDao
+    arguments: ['%var_dir%/chat-messages.db']

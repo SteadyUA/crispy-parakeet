@@ -1,0 +1,14 @@
+{
+    "type": "library",
+    "description": "user profile service",
+    "name": "user/profile",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "User\\Profile\\": "src/"
+        }
+    },
+    "require": {
+        "util/in-file-storage": "^1"
+    }
+}

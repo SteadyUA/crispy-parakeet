@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    public: false
+    autowire: true
+
+  User\Auth\:
+    resource: './src/*'
+
+  User\Auth\AuthService:
+    alias: User\Auth\Service\Auth
+    public: true
+
+# private

@@ -1,0 +1,3 @@
+# just for plugin
+imports:
+  - { resource: communication/dependency.yml }
