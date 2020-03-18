@@ -1,0 +1,85 @@
+@startuml
+hide fields
+hide methods
+
+skinparam package {
+    backgroundColor white
+}
+
+package packages/user-team <<Rectangle>> #EEEBDC {
+    package User\Auth {
+        interface AuthService
+        AuthService <|-- Service\Auth
+    }
+
+    package User\Profile {
+        interface ProfileService
+        ProfileService <|-- Service\Profile
+        interface Service\ProfileStorage
+        Service\Profile --> Service\ProfileStorage
+        Service\ProfileStorage <|-- Infrastructure\InFileProfileStorage
+    }
+
+    package Web\User #EEEEEE {
+        AuthController --> AuthService
+        class IndexController
+    }
+}
+
+package packages/com-team <<Rectangle>> #EEEBDC {
+    package Communication\Messages {
+        interface MessagesProjection
+        interface SendMessageAware
+        MessagesProjection <|-- Service\Messages
+        SendMessageAware <|-- Service\Messages
+        interface Service\MessagesStorage
+        Service\Messages --> Service\MessagesStorage
+    }
+
+    package Communication\MessagesStorage {
+        Service\MessagesStorage <|-- InFileMessagesStorage
+    }
+
+    package Communication\MemberList {
+        interface MemberAware
+        interface MembersProjection
+        MemberAware <|-- Service\Member
+        MembersProjection <|-- Service\Member
+        interface Service\Storage
+        Service\Member --> Service\Storage
+        Service\Storage <|-- Infrastructure\InFileStorage
+    }
+
+    package Web\Communication #EEEEEE {
+        MessagesController --> SendMessageAware
+        MessagesController --> MessagesProjection
+        MembersController --> MembersProjection
+    }
+}
+
+package Web\App #EEEEEE {
+    App --> Controller
+    interface Controller
+    Controller <|-- AuthController
+    Controller <|-- IndexController
+    Controller <|-- MembersController
+    Controller <|-- MessagesController
+}
+
+MemberAware <.. Service\Messages
+ProfileService <.. Service\Messages
+
+ProfileService <.. Service\Member
+
+ProfileService <.. Service\Auth
+MemberAware <.. Service\Auth
+
+package Util\InFileStorage #EEEEEE {
+    interface Dao
+}
+
+Infrastructure\InFileStorage ..> Dao
+Infrastructure\InFileProfileStorage ..> Dao
+InFileMessagesStorage ..> Dao
+
+@enduml

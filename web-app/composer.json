@@ -1,0 +1,30 @@
+{
+    "type": "project",
+    "name": "web/app",
+    "description": "Phoenix chat",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Web\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/routing": "^5.0",
+        "symfony/http-foundation": "^5.0",
+        "symfony/dependency-injection": "^5.0",
+        "symfony/yaml": "^5.0",
+        "symfony/config": "^5.0",
+
+        "web/communication": "^1",
+        "web/user": "^1"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../packages/*/*/*",
+            "options": {
+                "symlink": false
+            }
+        }
+    ]
+}
