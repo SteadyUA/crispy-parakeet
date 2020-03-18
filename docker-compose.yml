@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web-app:
+    image: nginx:stable
+    container_name: nginx-app
+    ports:
+      - "80:80"
+    volumes:
+      - ./web-app:/var/www/html
+      - ./web-app.conf:/etc/nginx/conf.d/site.conf
+    links:
+        - php
+  php:
+    image: php:7-fpm
+    container_name: php-fpm
+    volumes:
+      - ./web-app:/var/www/html
