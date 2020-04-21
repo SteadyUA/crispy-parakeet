@@ -15,8 +15,8 @@
         "symfony/yaml": "^5.0",
         "symfony/config": "^5.0",
 
-        "web/communication": "^1",
-        "web/user": "^1"
+        "web/communication": "^0.0",
+        "web/user": "^0.0"
     },
     "repositories": [
         {

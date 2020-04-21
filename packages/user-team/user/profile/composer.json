@@ -9,6 +9,6 @@
         }
     },
     "require": {
-        "util/in-file-storage": "^1"
+        "util/in-file-storage": "^1.0"
     }
 }

@@ -2,15 +2,15 @@
     "type": "library",
     "name": "web/user",
     "description": "user controllers component",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "autoload": {
         "psr-4": {
             "Web\\User\\": "src/"
         }
     },
     "require": {
-        "web/app": "^1",
+        "web/app": "^1.0",
 
-        "user/auth": "^1"
+        "user/auth": "^1.0"
     }
 }
