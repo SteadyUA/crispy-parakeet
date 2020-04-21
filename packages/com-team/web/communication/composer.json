@@ -2,7 +2,7 @@
     "type": "library",
     "name": "web/communication",
     "description": "communication controllers component",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "autoload": {
         "psr-4": {
             "Web\\Communication\\": "src/"
