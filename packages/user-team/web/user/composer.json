@@ -12,5 +12,11 @@
         "web/app": "^1.0",
 
         "user/auth": "^1.0"
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../../*/*/*"
+        }
+    ]
 }

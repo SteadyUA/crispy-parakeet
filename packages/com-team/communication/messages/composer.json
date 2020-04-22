@@ -11,5 +11,11 @@
     "require": {
         "communication/member-list": "^1.0",
         "user/profile": "^1.0"
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../../*/*/*"
+        }
+    ]
 }
