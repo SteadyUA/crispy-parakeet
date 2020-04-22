@@ -1,4 +1,6 @@
-<?php /** @var \Web\View $this; */?><html lang="en">
+<?php
+use Web\User\IndexController;
+/** @var \Web\View $this; */?><html lang="en">
 <head>
     <title><?php echo $this->get('title') ?></title>
     <meta charset="utf-8">
@@ -25,6 +27,6 @@
 <body>
     <div class="container">
         <div id="logo" style="float: left; margin: 3px 10px 0 0">
-            <a href="/"><img src="/favicon-96x96.png" style="height: 38px;"/></a>
+            <a href="<?php echo $this->url(IndexController::ROUTE_START) ?>"><img src="/favicon-96x96.png" style="height: 38px;"/></a>
         </div>
         <h1><?php echo $this->get('title') ?></h1>
