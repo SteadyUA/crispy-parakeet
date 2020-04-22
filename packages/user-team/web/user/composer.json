@@ -2,7 +2,7 @@
     "type": "library",
     "name": "web/user",
     "description": "user controllers component",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "autoload": {
         "psr-4": {
             "Web\\User\\": "src/"

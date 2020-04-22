@@ -2,7 +2,7 @@
 
 namespace User\Profile\Service;
 
-use Exception;
+use User\Profile\Exception\ProfileExistsException;
 use User\Profile\ProfileService;
 
 class Profile implements ProfileService
@@ -25,7 +25,7 @@ class Profile implements ProfileService
     {
         $profile = $this->storage->findByLogin($loginName);
         if (isset($profile)) {
-            throw new \User\Profile\Exception\ProfileExistsException($loginName);
+            throw new ProfileExistsException($loginName);
         }
         $profileId = $this->storage->getNextId();
         $this->storage->save($profileId, $loginName);

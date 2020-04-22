@@ -4,7 +4,6 @@ namespace Web\Communication;
 
 use Web\Controller;
 use Web\ViewFactory;
-use Exception;
 use Communication\Messages\SendMessageAware;
 use Communication\Messages\MessagesProjection;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -61,14 +60,8 @@ class MessagesController implements Controller
         $messageText = $request->get('messageText', '');
         $view = $this->viewFactory->load('error');
         if (!empty(trim($messageText))) {
-            try {
-                $profileId = $request->getSession()->get('profileId');
-                $this->chatService->sendMessage($profileId, $messageText);
-            } catch (Exception $ex) {
-                $view->set('error', $ex->getMessage());
-
-                return new Response($view->render(), Response::HTTP_OK);
-            }
+            $profileId = $request->getSession()->get('profileId');
+            $this->chatService->sendMessage($profileId, $messageText);
         }
 
         return new RedirectResponse($view->url(self::ROUTE_MESSAGES));

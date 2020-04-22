@@ -5,6 +5,9 @@ namespace User\Auth\Service;
 use Exception;
 use Communication\MemberList\MemberAware;
 use User\Auth\AuthService;
+use User\Auth\Exception\LoginNameExistsException;
+use User\Auth\Exception\UnknownLoginNameException;
+use User\Profile\Exception\ProfileExistsException;
 use User\Profile\ProfileService;
 
 class Auth implements AuthService
@@ -32,8 +35,8 @@ class Auth implements AuthService
     {
         try {
             $profileId = $this->profileService->create($loginName);
-        } catch (Exception $ex) {
-            throw new Exception('Login name in use.');
+        } catch (ProfileExistsException $ex) {
+            throw new LoginNameExistsException('Login name in use.');
         }
 
         $this->memberService->touchMember($profileId);
@@ -48,7 +51,7 @@ class Auth implements AuthService
     {
         $profileId = $this->profileService->idOfLogin($loginName);
         if (null === $profileId) {
-            throw new Exception('Unknown login name.');
+            throw new UnknownLoginNameException($loginName);
         }
 
         $this->memberService->touchMember($profileId);

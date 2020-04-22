@@ -2,6 +2,8 @@
 
 namespace Web\User;
 
+use User\Auth\Exception\LoginNameExistsException;
+use User\Auth\Exception\UnknownLoginNameException;
 use Web\Controller;
 use Web\ViewFactory;
 use Exception;
@@ -49,7 +51,7 @@ class AuthController implements Controller
                 $request->getSession()->set('profileId', $profileId);
 
                 return new RedirectResponse($view->url(IndexController::ROUTE_START));
-            } catch (Exception $ex) {
+            } catch (LoginNameExistsException $ex) {
                 $view->set('error', $ex->getMessage());
             }
         }
@@ -68,7 +70,7 @@ class AuthController implements Controller
                 $request->getSession()->set('profileId', $profileId);
 
                 return new RedirectResponse($view->url(IndexController::ROUTE_START));
-            } catch (Exception $ex) {
+            } catch (UnknownLoginNameException $ex) {
                 $view->set('error', $ex->getMessage());
             }
         }

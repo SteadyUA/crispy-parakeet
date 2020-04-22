@@ -2,21 +2,19 @@
 
 namespace User\Auth;
 
-use Exception;
-
 interface AuthService
 {
     /**
      * @param string $loginName
      * @return int profileId
-     * @throws Exception
+     * @throws Exception\LoginNameExistsException
      */
     public function signIn(string $loginName): int;
 
     /**
      * @param string $loginName
      * @return int profileId
-     * @throws Exception
+     * @throws Exception\UnknownLoginNameException
      */
     public function logIn(string $loginName): int;
 
