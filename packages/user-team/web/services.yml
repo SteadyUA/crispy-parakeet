@@ -1,3 +1,0 @@
-# just for plugin
-imports:
-  - { resource: user/dependency.yml }

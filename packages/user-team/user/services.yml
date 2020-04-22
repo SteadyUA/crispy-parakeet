@@ -1,4 +1,0 @@
-# just for plugin
-imports:
-  - { resource: auth/dependency.yml }
-  - { resource: profile/dependency.yml }

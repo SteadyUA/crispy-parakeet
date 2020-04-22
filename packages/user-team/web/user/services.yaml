@@ -1,6 +1,6 @@
 imports:
-  - { resource: ../../user/auth/dependency.yml }
-  - { resource: ../../user/profile/dependency.yml }
+  - { resource: ../../user/auth/services.yml }
+  - { resource: ../../user/profile/services.yml }
 
 services:
   _defaults:

@@ -1,3 +1,6 @@
+imports:
+  - { resource: vendor/user/profile/services.yml }
+
 services:
   _defaults:
     public: false

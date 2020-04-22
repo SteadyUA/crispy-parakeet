@@ -1,6 +1,0 @@
-# just for plugin
-imports:
-  - { resource: controller/dependency.yml }
-  - { resource: member-list/dependency.yml }
-  - { resource: messages/dependency.yml }
-  - { resource: messages-storage/dependency.yml }

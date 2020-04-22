@@ -29,5 +29,6 @@ if ($this->has('error')) {
             </div>
         </div>
     </form>
+    <script> document.getElementById('loginName').focus() </script>
 <?php
 echo $this->load('footer')->render();

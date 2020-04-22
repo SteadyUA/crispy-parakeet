@@ -1,0 +1,16 @@
+imports:
+  - { resource: vendor/communication/member-list/services.yml }
+  - { resource: vendor/communication/messages/services.yml }
+  - { resource: vendor/communication/messages-storage/services.yml } # <- composition
+
+services:
+  _defaults:
+    autowire: true
+
+  _instanceof:
+    Web\Controller:
+      tags: [Web\Controller]
+      public: true
+
+  Web\Communication\:
+    resource: './src/*'

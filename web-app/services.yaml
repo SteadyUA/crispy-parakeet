@@ -1,6 +1,6 @@
 imports:
-  - { resource: vendor/web/communication/dependency.yml }
-  - { resource: vendor/web/user/dependency.yml }
+  - { resource: vendor/web/communication/services.yaml }
+  - { resource: vendor/web/user/services.yaml }
 
 services:
   Web\App:
