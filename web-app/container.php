@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 $projectDir = __DIR__;
 $containerBuilder = new ContainerBuilder();
 $loader = new YamlFileLoader($containerBuilder, new FileLocator($projectDir));
-$loader->load('container.yml');
+$loader->load('services.yaml');
 $containerBuilder->setParameter('project_dir', $projectDir);
 $containerBuilder->setParameter('var_dir', $projectDir . '/var');
 $containerBuilder->compile();

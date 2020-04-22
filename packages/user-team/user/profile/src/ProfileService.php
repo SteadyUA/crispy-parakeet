@@ -2,14 +2,12 @@
 
 namespace User\Profile;
 
-use Exception;
-
 interface ProfileService
 {
     /**
      * @param string $loginName
      * @return int profileId
-     * @throws Exception when exists
+     * @throws Exception\ProfileExistsException when exists
      */
     public function create(string $loginName): int;
 

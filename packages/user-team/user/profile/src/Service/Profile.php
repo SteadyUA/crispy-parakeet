@@ -25,7 +25,7 @@ class Profile implements ProfileService
     {
         $profile = $this->storage->findByLogin($loginName);
         if (isset($profile)) {
-            throw new Exception('Profile exists');
+            throw new \User\Profile\Exception\ProfileExistsException($loginName);
         }
         $profileId = $this->storage->getNextId();
         $this->storage->save($profileId, $loginName);

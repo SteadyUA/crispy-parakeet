@@ -1,5 +1,5 @@
 imports:
-  - { resource: vendor/user/profile/services.yml }
+  - { resource: vendor/user/profile/services.yaml }
 
 services:
   _defaults:

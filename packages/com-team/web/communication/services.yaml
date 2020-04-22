@@ -1,7 +1,7 @@
 imports:
-  - { resource: vendor/communication/member-list/services.yml }
-  - { resource: vendor/communication/messages/services.yml }
-  - { resource: vendor/communication/messages-storage/services.yml } # <- composition
+  - { resource: vendor/communication/member-list/services.yaml }
+  - { resource: vendor/communication/messages/services.yaml }
+  - { resource: vendor/communication/messages-storage/services.yaml } # <- composition
 
 services:
   _defaults:
