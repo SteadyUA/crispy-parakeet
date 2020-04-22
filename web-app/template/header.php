@@ -27,6 +27,6 @@ use Web\User\IndexController;
 <body>
     <div class="container">
         <div id="logo" style="float: left; margin: 3px 10px 0 0">
-            <a href="<?php echo $this->url(IndexController::ROUTE_START) ?>"><img src="/favicon-96x96.png" style="height: 38px;"/></a>
+            <a href="<?php echo $this->url(IndexController::ROUTE_START) ?>"><img src="/favicon-96x96.png" width="38" height="38"/></a>
         </div>
         <h1><?php echo $this->get('title') ?></h1>
