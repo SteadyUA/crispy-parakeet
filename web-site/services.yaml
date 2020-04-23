@@ -1,5 +1,8 @@
 imports:
+  # top piece of bread
   - { resource: vendor/web/communication/services.yaml }
   - { resource: vendor/web/user/services.yaml }
   - { resource: vendor/web/app/services.yaml }
 
+  # bottom piece of bread
+  - { resource: vendor/communication/messages-storage/services.yaml }

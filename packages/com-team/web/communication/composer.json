@@ -12,7 +12,6 @@
         "web/app": "^1.0",
 
         "communication/messages": "^1.0",
-        "communication/messages-storage": "^1.0",
         "communication/member-list": "^1.0"
     },
     "repositories": [
