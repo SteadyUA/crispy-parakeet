@@ -1,22 +1,5 @@
 imports:
   - { resource: vendor/web/communication/services.yaml }
   - { resource: vendor/web/user/services.yaml }
+  - { resource: vendor/web/app/services.yaml }
 
-services:
-  Web\App:
-    public: true
-    class: Web\App
-    calls: [['registerControllers', [!tagged Web\Controller]]]
-
-  Symfony\Component\Routing\Generator\UrlGenerator:
-    public: true
-    factory:
-      - '@Web\App'
-      - 'urlGenerator'
-
-  Web\ViewFactory:
-    public: true
-    class: Web\View
-    arguments:
-      - '@Symfony\Component\Routing\Generator\UrlGenerator'
-      - '%project_dir%/template'
