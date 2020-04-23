@@ -1,6 +1,7 @@
 <?php
 namespace Web;
 
+use RuntimeException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -11,7 +12,6 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
-use Throwable;
 
 class App
 {
@@ -35,10 +35,10 @@ class App
         foreach ($controllers as $controller) {
             foreach ($controller->getRouteMap() as $routeName => list($routePath, $actionName)) {
                 if (!method_exists($controller, $actionName)) {
-                    throw new \RuntimeException("Method not exists: " . get_class($controller) . "::{$actionName}");
+                    throw new RuntimeException("Method not exists: " . get_class($controller) . "::{$actionName}");
                 }
                 if (null !== $this->routes->get($routeName)) {
-                    throw new \RuntimeException("Route '{$routeName}' already defined.");
+                    throw new RuntimeException("Route '{$routeName}' already defined.");
                 }
                 $this->routes->add(
                     $routeName,

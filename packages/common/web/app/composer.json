@@ -1,0 +1,21 @@
+{
+    "type": "library",
+    "name": "web/app",
+    "description": "Phoenix chat",
+    "version": "1.0.1",
+    "autoload": {
+        "psr-4": {
+            "Web\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/routing": "^5.0",
+        "symfony/http-foundation": "^5.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../../*/*/*"
+        }
+    ]
+}
