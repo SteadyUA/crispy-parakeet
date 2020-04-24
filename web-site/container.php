@@ -9,7 +9,7 @@ $containerBuilder = new ContainerBuilder();
 $loader = new YamlFileLoader($containerBuilder, new FileLocator($projectDir));
 $loader->load('services.yaml');
 $containerBuilder->setParameter('project_dir', $projectDir);
-$containerBuilder->setParameter('var_dir', $projectDir . '/var');
+$containerBuilder->setParameter('var_dir', realpath($projectDir . '/../var'));
 $containerBuilder->compile();
 
 return $containerBuilder;
