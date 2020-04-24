@@ -1,0 +1,22 @@
+{
+    "type": "library",
+    "name": "console/communication",
+    "description": "Communication console commands",
+    "version": "0.0.3",
+    "autoload": {
+        "psr-4": {
+            "Console\\Communication\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "^5.0",
+
+        "communication/messages": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../../*/*/*"
+        }
+    ]
+}

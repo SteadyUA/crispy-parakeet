@@ -1,0 +1,19 @@
+{
+    "type": "project",
+    "description": "Phoenix chat console",
+    "require": {
+        "symfony/dependency-injection": "^5.0",
+        "symfony/yaml": "^5.0",
+        "symfony/config": "^5.0",
+        "symfony/console": "^5.0",
+
+        "console/communication": "^0.0",
+        "communication/messages-storage": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../packages/*/*/*"
+        }
+    ]
+}

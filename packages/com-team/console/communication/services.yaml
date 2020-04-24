@@ -1,0 +1,15 @@
+imports:
+  - { resource: vendor/communication/messages/services.yaml }
+
+services:
+  _defaults:
+    autowire: true
+
+  _instanceof:
+    Symfony\Component\Console\Command\Command:
+      tags: [Symfony\Component\Console\Command\Command]
+      public: true
+
+  Console\Communication\MessagesCommand:
+    autowire: true
+    public: true
